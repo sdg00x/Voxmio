@@ -1,1 +1,32 @@
-{"name":"voxmio","private":true,"version":"0.1.0","type":"module","scripts":{"dev":"vite","build":"vite build","preview":"vite preview"},"dependencies":{"@vitejs/plugin-react":"latest","vite":"latest","typescript":"latest","react":"latest","react-dom":"latest","tone":"latest","lucide-react":"latest"},"devDependencies":{"@types/react":"latest","@types/react-dom":"latest"}}
+{
+  "name": "voxmio",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "postinstall": "node scripts/copy-wasm.mjs",
+    "build": "tsc --noEmit && vite build",
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "preview": "vite preview --host 0.0.0.0",
+    "test:browser": "node tests/browser.mjs"
+  },
+  "dependencies": {
+    "@mediapipe/tasks-vision": "0.10.35",
+    "@vitejs/plugin-react": "6.1.1",
+    "lucide-react": "1.47.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "tone": "15.1.22",
+    "typescript": "7.0.2",
+    "vite": "8.3.0"
+  },
+  "devDependencies": {
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "playwright": "1.63.0"
+  },
+  "engines": {
+    "node": ">=22.18.0"
+  }
+}
